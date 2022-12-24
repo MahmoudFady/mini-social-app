@@ -1,0 +1,32 @@
+<div class="post-hook">
+  <div class="header">
+    <img [src]="post.creator.imagePath" alt="" />
+    <div>
+      <a href="#">
+        <h6>{{ post.creator.fullName }}</h6>
+        <span>{{ post.date }}</span></a
+      >
+    </div>
+    <div class="action-icon">
+      <i class="fa-solid fa-ellipsis-vertical"></i><i class="fa-solid fa-"></i>
+    </div>
+  </div>
+  <div class="content">
+    <p>{{ post.content }}</p>
+  </div>
+  <div *ngIf="post.imagesPath.length !== 0" class="images">
+    <img *ngFor="let imgPath of post.imagesPath" [src]="imgPath" alt="" />
+  </div>
+  <div class="metaData">
+    <div class="love">
+      <a>{{ post.metaData.likesCount }} </a>
+      <button>
+        <i class="fa-regular fa-heart"></i>
+      </button>
+    </div>
+    <div class="comments">
+      <a>{{ post.metaData.commentsCount }}</a
+      ><button><i class="fa-regular fa-comment"></i></button>
+    </div>
+  </div>
+</div>

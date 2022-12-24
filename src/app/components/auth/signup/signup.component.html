@@ -1,0 +1,169 @@
+<div class="row mt-5 mb-5 justify-content-center align-items-center">
+  <div class="col-xs-10 col-sm-8 col-md-8 col-lg-6">
+    <form (ngSubmit)="handelSignup(signupForm)" #signupForm="ngForm">
+      <div class="form-group">
+        <h3>signup</h3>
+      </div>
+      <div *ngIf="signupErrMsg" class="form-group auth-res-err">
+        <p>{{ signupErrMsg }}</p>
+      </div>
+      <div class="form-group">
+        <i class="fa-solid fa-user"></i>
+        <input
+          type="text"
+          placeholder="full name . . ."
+          class="form-control"
+          required
+          minlength="5"
+          name="fullName"
+          ngModel
+          #fullName="ngModel"
+        />
+      </div>
+      <div *ngIf="fullName.touched && fullName.errors" class="input-err-msg">
+        <p *ngIf="fullName.errors['required']">name is required</p>
+        <p *ngIf="fullName.errors['minlength']">
+          name must be more than 4 char
+        </p>
+      </div>
+      <div class="form-group">
+        <i class="fa-solid fa-envelope"></i>
+        <input
+          type="text"
+          placeholder="email . . ."
+          class="form-control"
+          email
+          required
+          name="email"
+          ngModel
+          #email="ngModel"
+        />
+      </div>
+      <div *ngIf="email.touched && email.errors" class="input-err-msg">
+        <p *ngIf="email.errors['required']">email is required</p>
+        <p *ngIf="email.errors['email']">invalid email ex : abc@abc.com</p>
+      </div>
+      <div class="form-group">
+        <i class="fa-solid fa-mobile"></i>
+        <input
+          type="tel"
+          placeholder="phone num . . ."
+          class="form-control"
+          required
+          pattern="^(01)[0125]([0-9]{8})$"
+          name="phoneNumber"
+          ngModel
+          #phoneNumber="ngModel"
+        />
+      </div>
+      <div
+        *ngIf="phoneNumber.touched && phoneNumber.errors"
+        class="input-err-msg"
+      >
+        <p *ngIf="phoneNumber.errors['required']">phone num is required</p>
+        <p *ngIf="phoneNumber.errors['pattern']">invalid phone num</p>
+      </div>
+      <div
+        class="row"
+        ngModelGroup="address"
+        name="address"
+        #address="ngModelGroup"
+      >
+        <div class="col">
+          <div class="form-group">
+            <i class="fa-solid fa-earth-africa"></i>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="country . . ."
+              name="country"
+              ngModel
+              required
+              minlength="4"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <i class="fa-solid fa-location-dot"></i>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="state . . ."
+              name="state"
+              ngModel
+              required
+              minlength="4"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <i class="fa-solid fa-city"></i>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="city . . ."
+              name="city"
+              ngModel
+              required
+              minlength="4"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <i class="fa-solid fa-cake-candles"></i>
+        <input
+          type="date"
+          placeholder="birth date"
+          required
+          name="birthDate"
+          ngModel
+          #birthDate="ngModel"
+        />
+      </div>
+      <div *ngIf="birthDate.touched && birthDate.errors" class="input-err-msg">
+        <p *ngIf="birthDate.errors['required']">birth date is required</p>
+      </div>
+      <div class="form-group">
+        <select class="form-control" name="gender" ngModel required="true">
+          <option class="form-control" value="male" selected>male</option>
+          <option class="form-control" value="female">femal</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <i class="fa-solid fa-lock"></i>
+        <input
+          type="password"
+          placeholder="password . . ."
+          class="form-control"
+          required=""
+          minlength="6"
+          name="password"
+          ngModel
+          #password="ngModel"
+        />
+      </div>
+      <div *ngIf="password.touched && password.errors" class="input-err-msg">
+        <p *ngIf="password.errors['required']">password is required</p>
+        <p *ngIf="password.errors['minlength']">
+          password must be more than 5 char
+        </p>
+      </div>
+      <div class="form-group">
+        <button
+          class="btn"
+          type="submit"
+          [disabled]="signupForm.invalid || loading"
+        >
+          <i class="fa-solid fa-arrow-right-to-bracket"></i> signup
+          <span *ngIf="loading">. . .</span>
+        </button>
+      </div>
+      <div class="switch-auth form-group text-center">
+        <p>have account ? <a href="#">signin now</a></p>
+      </div>
+    </form>
+  </div>
+</div>

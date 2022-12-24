@@ -1,0 +1,68 @@
+div.post-hook {
+  padding: 15px;
+  box-shadow: var(--mainBoxShadow);
+  border-radius: 5px;
+  margin: 10px auto;
+}
+div.post-hook > div {
+  margin-bottom: 10px;
+}
+div.post-hook div.header {
+  height: 45px;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+div.post-hook div.header > div {
+  padding-top: 4px;
+  padding-left: 8px;
+  line-height: 16px;
+}
+
+div.post-hook div.header img {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+}
+div.post-hook div.header h6,
+div.post-hook div.header span {
+  padding: 0px;
+  margin: 0px;
+}
+div.post-hook div.header h6 {
+  font-size: 13px;
+}
+div.post-hook div.header span {
+  font-size: 12px;
+  color: var(--textColor);
+}
+div.post-hook div.header div.action-icon {
+  height: 25px;
+  width: 25px;
+  color: var(--textColor);
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  text-align: center;
+}
+div.images {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+div.images img {
+  width: 50%;
+}
+div.metaData {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+}
+div.metaData button {
+  display: inline-block;
+  width: max-content;
+  padding: 0px 10px;
+  background-color: transparent;
+}

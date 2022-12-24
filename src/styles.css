@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@450&display=swap");
+:root {
+  --mainColor: #205295;
+  --textColor: rgb(167, 169, 170);
+  --dangerColor: #dc3545;
+  --mainBoxShadow: 1px 1px 4px #ccc, -1px -1px 4px #ccc;
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  text-transform: capitalize !important;
+  font-family: "Rubik";
+}
+a,
+a:hover {
+  text-decoration: none;
+  color: inherit !important;
+}
+input,
+button {
+  border: none !important;
+}

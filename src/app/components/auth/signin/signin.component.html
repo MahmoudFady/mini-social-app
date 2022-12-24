@@ -1,0 +1,64 @@
+<div class="row mt-5 justify-content-center align-items-center">
+  <div class="col-xs-10 col-sm-8 col-md-8 col-lg-6">
+    <form (ngSubmit)="handelSignin(signinForm)" #signinForm="ngForm">
+      <div class="form-group">
+        <h3>signin</h3>
+      </div>
+      <div *ngIf="signinErrMsg" class="form-group auth-res-err">
+        <p>{{ signinErrMsg }}</p>
+      </div>
+      <div class="form-group">
+        <i class="fa-solid fa-envelope"></i>
+        <input
+          type="text"
+          placeholder="email . . ."
+          class="form-control"
+          email
+          required
+          name="email"
+          ngModel
+          #email="ngModel"
+        />
+      </div>
+      <div *ngIf="email.touched && email.errors" class="input-err-msg">
+        <p *ngIf="email.errors['required']">email is required</p>
+        <p *ngIf="email.errors['email']">invalid email ex : abc@abc.com</p>
+      </div>
+      <div class="form-group">
+        <i class="fa-solid fa-lock"></i>
+        <input
+          type="password"
+          placeholder="password . . ."
+          class="form-control"
+          required=""
+          minlength="6"
+          name="password"
+          ngModel
+          #password="ngModel"
+        />
+      </div>
+      <div *ngIf="password.touched && password.errors" class="input-err-msg">
+        <p *ngIf="password.errors['required']">password is required</p>
+        <p *ngIf="password.errors['minlength']">
+          password must be more than 5 char
+        </p>
+      </div>
+      <div class="forget-password form-group">
+        <a href="#">forget password ?</a>
+      </div>
+      <div class="form-group">
+        <button
+          class="btn"
+          type="submit"
+          [disabled]="signinForm.invalid || loading"
+        >
+          <i class="fa-solid fa-arrow-right-to-bracket"></i> signin
+          <span *ngIf="loading">. . .</span>
+        </button>
+      </div>
+      <div class="switch-auth form-group text-center">
+        <p>don't have account ? <a href="#">signup now</a></p>
+      </div>
+    </form>
+  </div>
+</div>

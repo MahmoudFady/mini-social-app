@@ -1,0 +1,52 @@
+form {
+  box-shadow: var(--mainBoxShadow);
+  padding: 25px;
+  border-radius: 5px;
+}
+form div.form-group {
+  width: 100%;
+  height: 45px;
+  position: relative;
+  line-height: 45px;
+}
+form > div.form-group.auth-res-err {
+  background-color: var(--dangerColor);
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+}
+form  div.form-group > i {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: var(--textColor);
+}
+form input,
+form button[type="submit"] {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+form input {
+  border: 2px solid var(--textColor) !important;
+  text-indent: 20px;
+}
+form input.ng-touched.ng-valid {
+  border-color: #080 !important;
+}
+form input.ng-touched.ng-invalid {
+  border-color: var(--dangerColor) !important;
+}
+form button[type="submit"] {
+  background-color: var(--mainColor);
+  color: #fff;
+}
+div.forget-password a,
+div.switch-auth a {
+  color: var(--dangerColor) !important;
+}
+form div.input-err-msg {
+  color: var(--dangerColor) !important;
+  font-size: 13px;
+}

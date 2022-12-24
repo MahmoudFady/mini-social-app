@@ -1,0 +1,29 @@
+.navbar-brand i {
+  font-size: 35px;
+  font-weight: bold;
+}
+.navbar-collapse ul li {
+  color: var(--textColor);
+  padding: 0px 5px;
+}
+.navbar-collapse ul li:hover {
+  color: var(--mainColor);
+  cursor: pointer;
+}
+.navbar-collapse ul li.active {
+  background-color: var(--mainColor);
+  color: #fff;
+  border-radius: 20px;
+}
+@media screen and (max-width: 768px) {
+  .navbar-collapse {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .navbar-collapse ul li {
+    text-align: center;
+    width: 120px;
+    margin: 10px auto;
+  }
+}
